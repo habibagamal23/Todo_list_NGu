@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todolistapp/MyHomePage.dart';
 
 class Rigister extends StatefulWidget {
   const Rigister({super.key});
@@ -81,12 +82,15 @@ var isvisabilty = false;
               ),
               ElevatedButton(
                   onPressed: () {
+                    if( namecontellr.text.isNotEmpty && emailcontellr.text.isNotEmpty && passcontellr.text.isNotEmpty){
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context)=> Myhomepage()));
+
+                    }
+
                     print("my name is ${namecontellr.text}");
                     print("my email is ${emailcontellr.text}");
                     print("my pass is ${passcontellr.text}");
-                    namecontellr.clear();
-                    emailcontellr.clear();
-                    passcontellr.clear();
 
                   },
                   style: ElevatedButton.styleFrom(

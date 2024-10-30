@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:todolistapp/HomeScreen.dart';
 
-class Loginscreen extends StatelessWidget {
+class Loginscreen extends StatefulWidget {
   Loginscreen({super.key});
 
+  @override
+  State<Loginscreen> createState() => _LoginscreenState();
+}
+
+class _LoginscreenState extends State<Loginscreen> {
   TextEditingController email = TextEditingController();
+
+  bool ischeck = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,11 +43,26 @@ class Loginscreen extends StatelessWidget {
 
           ),
 
+
+          // check box
+
+          Checkbox(value: ischeck,
+              onChanged:(value){
+            setState(() {
+              ischeck = value ?? false;
+            });
+
+              }),
+
+
           // pass
           SizedBox(
             height: 50,
           ),
           ElevatedButton(onPressed: (){
+            Navigator.push(context,
+                MaterialPageRoute(
+                builder: (context)=> Homescreen()));
 
           },
               child: Text("Login")

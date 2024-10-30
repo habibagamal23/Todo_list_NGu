@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todolistapp/splashScreen.dart';
 
 import 'Rigister.dart';
 import 'loginScreen.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Rigister(),
+      home: Splashscreen(),
     );
   }
 }
